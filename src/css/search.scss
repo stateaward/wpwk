@@ -1,0 +1,155 @@
+@import "common";
+
+.search-container {
+  @include mobile {
+    padding: 0px 2%;
+  }
+
+  @include desktop {
+    padding: 0px 20%;
+  }
+
+  position: fixed;
+  top: 55px;
+  left: 0;
+  background-color: rgb(250, 250, 250);
+  width: 100%;
+  height: 55vh;
+  z-index: 10;
+  border-radius: 0 0 50px 50px;
+
+  box-shadow: 0px 20px 20px 0px #56565652;
+  padding: 0px 10%;
+
+  // border: 1px dashed red;
+
+  .search-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // border: 1px dashed deeppink;
+
+    .search {
+      display: flex;
+      width: 100% !important;
+      padding-left: 20px;
+
+      .v-input__slot::before {
+        border-bottom: 2px solid rgba(0, 0, 0, 0.87) !important;
+      }
+
+      button {
+        border: none;
+        font-size: 12pt;
+        font-weight: 600;
+        color: rgb(33, 33, 33) !important;
+      }
+    }
+
+    p {
+      font-size: 12pt;
+      font-weight: 600;
+    }
+
+    .category-wrapper {
+      // border: 1px dashed deeppink;
+      padding-top: 10px;
+      width: 100%;
+      margin-left: 15px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // white-space: nowrap;
+      // overflow-x: scroll;
+
+      .category {
+        margin-bottom: 10px;
+
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .select-button {
+          cursor: pointer;
+
+          display: block;
+          background-color: rgb(58, 70, 58);
+          border-radius: 50px;
+          font-size: 10pt;
+          // border: 1px $green solid;
+          width: 25%;
+          height: 40px;
+          margin-right: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          color: white;
+          font-size: 10pt;
+          font-weight: 600;
+
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    .record-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 20px;
+
+      .popularity-wrapper,
+      .recommend-wrapper {
+        width: 50%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .popularity {
+          width: 100%;
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .select-button {
+            cursor: pointer;
+
+            background-color: rgb(230, 225, 225);
+            color: white;
+            border-radius: 3px;
+            font-size: 10pt;
+            font-weight: 600;
+            text-align: center;
+            width: 80%;
+
+            padding: 4px 8px 4px 8px;
+            margin-bottom: 8px;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            &:nth-child(1) {
+              background-color: rgb(237, 82, 47);
+            }
+
+            &:nth-child(2) {
+              background-color: rgb(237, 119, 93);
+            }
+
+            &:nth-child(3) {
+              background-color: rgb(247, 176, 161);
+            }
+          }
+        }
+      }
+    }
+  }
+}

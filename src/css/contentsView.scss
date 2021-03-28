@@ -1,0 +1,584 @@
+@import "common";
+@import "ripple.scss";
+
+// ContentsView.vue
+.cv-container {
+  height: 90vh;
+  overflow: hidden;
+  // background-color: orange;
+
+  // ContentsView.vue
+  .cv-card-wrapper {
+    margin-top: 20px;
+    // background-color: blue;
+    height: 90vh;
+    padding-bottom: 100px;
+
+    // 상단 수정 아이콘
+    .card-top-option {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      width: 160px;
+
+      display: flex;
+      flex-direction: row-reverse;
+      // align-items: flex-end;
+
+      .dots {
+        margin-left: 10px;
+        // background-color: red;
+        &:focus {
+          outline: none;
+        }
+      }
+      .share-btn:focus {
+        outline: none;
+      }
+
+      .dots i,
+      .share-btn i {
+        color: rgb(193, 193, 193) !important;
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .dropdown-menu {
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 10px 15px 0px #56565669;
+
+        border: 1px gray solid;
+        padding: 10px;
+
+        z-index: 1000;
+        position: absolute;
+        top: 30px;
+
+        .menu-detail {
+          cursor: pointer;
+          font-size: 10pt;
+          color: rgb(70, 70, 70);
+
+          i {
+            font-size: 14pt;
+          }
+
+          &:nth-child(1) {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+
+    .card-top-wrapper {
+      height: 50px;
+
+      //카드의 제목 '아이와 함께 노는 물감놀이~'
+      .title {
+        font-size: 14pt !important;
+        font-weight: 600;
+
+        text-align: center;
+        margin-bottom: 2px;
+      }
+
+      .writer {
+        cursor: pointer;
+        text-align: center;
+        font-size: 13px !important;
+        color: gray;
+      }
+
+      //@responsive 카드 데스크탑일 때 폰트 더 크게
+      @include desktop {
+        .title {
+          font-size: 20px !important;
+          font-weight: 600;
+          margin-bottom: 3px;
+        }
+
+        .writer {
+          cursor: pointer;
+          font-size: 14px !important;
+        }
+      }
+    }
+
+    //CardList.vue
+    .cl-container {
+      padding: 20px; //전체로부터 카드를 안으로...
+      padding-bottom: 100px;
+
+      // background-color: darkcyan;
+      height: 90vh;
+
+      // 카드 한장
+      // Card.vue
+      .card-wrapper {
+        $card_radisu: 40px; //카드의 모서를 둥글게
+        // background-color: pink;
+
+        border-radius: $card_radisu;
+        border: 1px rgb(230, 230, 230) solid;
+        box-shadow: 0px 9px 20px 0px #5656560f;
+
+        width: 100%;
+        height: 90%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .card-content {
+          $content_h: 40vh;
+          height: $content_h;
+          width: 100%;
+
+          img {
+            width: 100%;
+            height: $content_h;
+            object-fit: cover;
+            object-position: 0px 0px;
+          }
+
+          iframe {
+            width: 100%;
+            height: $content_h;
+            border: none;
+          }
+
+          img,
+          iframe {
+            border-radius: $card_radisu $card_radisu 0px 0px;
+            border-bottom: 1px solid rgb(199, 199, 199);
+          }
+        }
+
+        .card-desc {
+          border-radius: 0px 0px $card_radisu $card_radisu;
+
+          // overflow: scroll;
+          // 오버플로우 사용시 우측, 하단에 padding 생김
+
+          width: 100%;
+          height: 100%;
+          position: relative;
+
+          padding: 20px;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .desc {
+            position: relative;
+            padding: 10px;
+            text-align: center;
+            font-size: 16pt;
+          }
+
+          // 카드 desc 하단에 백그라운드 이미지- 가상 요소로 추가함
+          &::before {
+            content: "";
+            background: url("../assets/cv-bg2.png");
+            background-size: cover;
+            background-position: bottom;
+
+            // background-color: skyblue;
+            opacity: 0.4;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+
+            border-radius: 0px 0px $card_radisu $card_radisu;
+          }
+        }
+      }
+
+      // 하단 푸터
+      .cl-footer {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: 100;
+        left: 50%;
+        bottom: -26px;
+        transform: translateX(-50%);
+        margin-bottom: 25px;
+        //    background-color: white;
+
+        width: 100%;
+        height: 100px;
+
+        // 페이지네이션
+        // CardList.vue
+        .footer-pagination {
+          .v-pagination.v-pagination--circle {
+            margin-top: 4px; // 하단 버튼을 바닥에 붙이기 위함...
+            margin-bottom: 10px !important;
+
+            .v-pagination__item {
+              font-size: 3pt;
+              color: rgba(24, 24, 24, 0);
+
+              &:focus {
+                outline: none;
+              }
+
+              min-height: 20px !important;
+              height: 20px !important;
+              min-width: 20px !important;
+
+              box-shadow: none !important;
+              background-color: rgb(211, 211, 211);
+              border: 2px rgb(255, 255, 255) solid;
+
+              &--active {
+                border: none !important;
+                background-color: rgb(72, 72, 72) !important;
+              }
+            }
+
+            .v-pagination__navigation {
+              display: none !important;
+            }
+          }
+        }
+
+        // 최하단 좌우 이동 버튼
+        .footer-navi {
+          width: 100%;
+          // margin-top: 20px;
+          display: flex;
+
+          i {
+            color: $navi-main;
+          }
+
+          .cap {
+            padding: 0;
+            display: block;
+            font-size: 8pt;
+            font-weight: 600;
+            color: $navi-cap;
+          }
+
+          .left-button {
+            cursor: pointer;
+            position: relative;
+            height: 50px;
+            width: 50%;
+            text-align: center;
+
+            &::after {
+              content: "";
+              width: 1px;
+              height: 20px;
+              position: absolute;
+              top: 12px;
+              right: -1px;
+              background-color: rgb(223, 223, 223);
+            }
+
+            &.out {
+              i,
+              .cap {
+                color: rgb(75, 23, 22);
+              }
+            }
+          }
+
+          .right-button {
+            cursor: pointer;
+            width: 50%;
+            text-align: center;
+
+            &.fin {
+              i,
+              .cap {
+                color: $navi-success;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //Evaluations.vue
+  .ev-container {
+    // margin-top: 20px;
+    // background-color: blue;
+    height: 90vh;
+    padding-bottom: 100px;
+
+    // 평가페이지 최상단 타이틀 부분
+    .top-wrapper {
+      margin-top: 2vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      height: 190px;
+
+      .ev-title {
+        position: relative;
+        top: -160px;
+        font-size: 16px;
+        font-weight: 600;
+        color: rgb(70, 70, 70);
+      }
+
+      .ev-bubble {
+        width: 240px;
+      }
+
+      .ev-wk {
+        position: relative;
+        top: -10px;
+        width: 100px;
+      }
+    }
+
+    .sub {
+      display: block;
+      text-align: center;
+      margin: 0px auto;
+      color: gray;
+      font-size: 12px;
+    }
+
+    //평가 버튼들 존재
+    .eb-wrapper {
+      .eval-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 40px;
+
+        .ev-row {
+          min-height: 13vh;
+
+          @media (min-height: 1110px) {
+            & {
+              min-height: 19vh;
+            }
+          }
+
+          width: 100%;
+          margin-bottom: 15px;
+
+          display: flex;
+          justify-content: space-between;
+
+          button {
+            height: inherit;
+            width: 48%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            border: 1px solid rgb(227, 227, 227);
+
+            .v-btn__content {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+
+              font-size: 1em;
+              font-weight: 600;
+              color: rgb(46, 46, 46);
+              // text-overflow:ellipsis;
+
+              .emoji {
+                font-size: 20pt;
+                margin-bottom: 3px;
+              }
+            }
+          }
+        }
+
+        button {
+          // color: red;
+          // background-color: blue !important;
+          width: 50%;
+          border: 1px solid rgb(227, 227, 227);
+          // margin-bottom: 2px;
+        }
+      }
+
+      .btn-group {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 20px;
+
+        display: flex;
+        justify-content: space-between;
+
+        #submit {
+          margin-left: 5%;
+          width: 60%;
+          border: 1px solid $orange;
+
+          color: $orange;
+          font-weight: 400;
+        }
+
+        #report {
+          margin-right: 5%;
+          width: 10%;
+          color: red;
+        }
+      }
+    }
+
+    //최하단 버튼
+    .ev-footer {
+      // display: flex;
+      // flex-direction: column;
+      position: absolute;
+      z-index: 100;
+      left: 50%;
+      bottom: 0px;
+      transform: translateX(-50%);
+
+      width: 100%;
+      height: 50px;
+
+      // 최하단 좌우 이동 버튼
+      .footer-eval {
+        width: 100%;
+        display: flex;
+
+        .cap {
+          padding: 0;
+          display: block;
+          font-size: 8pt;
+          font-weight: 600;
+          color: $navi-cap;
+        }
+
+        // 아이콘 색상
+        i {
+          color: $navi-main;
+        }
+
+        .left-button {
+          width: 30%;
+          height: 50px;
+          text-align: center;
+          position: relative;
+
+          &::after {
+            content: "";
+            width: 1px;
+            height: 20px;
+            position: absolute;
+            top: 12px;
+            right: -1px;
+            background-color: rgb(223, 223, 223);
+          }
+        }
+
+        .middle-button {
+          width: 30%;
+          height: 50px;
+          text-align: center;
+          position: relative;
+
+          &::after {
+            content: "";
+            width: 1px;
+            height: 20px;
+            position: absolute;
+            top: 12px;
+            right: -1px;
+            background-color: rgb(223, 223, 223);
+          }
+        }
+
+        .right-button {
+          width: 40%;
+          text-align: center;
+          font-size: 10pt;
+        }
+      }
+    }
+  }
+
+  // ContentsView.vue
+  .comment-modal {
+    position: fixed;
+    bottom: 100px;
+    right: 40px;
+    z-index: 200;
+
+    #btn-comment {
+      background-color: red;
+      width: 5.5vh;
+      height: 5.5vh;
+      background-color: white;
+      box-shadow: 0px 8px 12px 0px #56565669;
+      border-radius: 50px;
+
+      @include mobile {
+        right: 5px;
+        width: 50px !important;
+        height: 50px !important;
+      }
+    }
+
+    display: inline;
+  }
+}
+
+// 댓글 모달창
+// 모달은 div가 최상단 컨테이너랑 같은 뎁스에 존재한다
+// 모달 닫히며 수많은 클래스가 변경됨 -> 너무 상세히 설정하면 변하는 과정에서 깨짐
+#comment-box.theme--light.v-card {
+  // background-color: blue !important;
+  box-shadow: 0px -9px 20px 2px #56565629;
+
+  margin-top: 300px !important;
+  border-radius: 50px 50px 0px 0px;
+  border: 1px solid $main-green;
+  // height: 50% !important;
+
+  $img_x: -65px;
+  $img_y: -10px;
+
+  // 모달 창 위의 이미지
+  .wp-face,
+  .wp-hand {
+    position: relative;
+    width: 80px;
+  }
+
+  .wp-face {
+    top: $img_x;
+    right: $img_y;
+    z-index: -1;
+  }
+
+  .wp-hand {
+    top: calc(#{$img_x} - 10px);
+    right: calc(#{$img_y} + 15px);
+    width: 50px;
+  }
+
+  //댓글들이 들어가는 영역
+  //@err overflow를 설정했지만 드래그 잘못하면 모달이 올라감
+  .cm-wrapper {
+    position: relative;
+    // background-color: red;
+    top: -60px;
+
+    // overflow를 주고 반응형 뷰를 끄면 우측에 패딩이 생김
+    // overflow-x: hidden;
+    // overflow-y: auto;
+    width: 100%;
+    height: 42vh;
+  }
+}

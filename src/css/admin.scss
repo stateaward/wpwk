@@ -1,0 +1,128 @@
+@import 'common';
+
+.ad-container {
+    height: 100%;
+    padding: 10px;
+    margin: 10px;
+
+    p {
+        display: flex;
+        justify-content: center;
+        font-size: 16pt;
+    }
+
+    .ad-top-wrapper {
+        padding: 10px 0 20px 0;
+
+        .noti-wrapper {
+
+            .noti-input-box{
+                display: inline;
+                width: 85%;
+                height: 40px;
+                margin-left: 10px;
+    
+                padding: 20px;
+                border: 1px solid gray;
+            }
+            button {
+                display: inline;
+                height: 42px;
+                width: 10%;
+                background-color: gray;
+
+                i {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .ad-bottom-wrapper {
+        padding-top: 10px;
+
+        .report-wrapper {
+            padding: 10px;
+            margin-bottom: 10px;
+    
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid rgb(228, 228, 228);
+    
+            display: flex;
+            flex-direction: column; 
+    
+            .report-content-wrapper {
+                border-bottom: 1px solid rgb(218, 218, 218);
+    
+                .reporter-creator {
+                    font-size: 9pt;
+                    
+                    .reporter {
+                        display: inline;
+                        background-color: rgb(230, 230, 230);
+                        color: rgb(135, 135, 135);
+                        border-radius: 3px;
+        
+                        padding: 4px 8px 4px 8px;
+                        margin-right: 5px;
+                    }
+                    .creator {
+                        display: inline;
+                        background-color: rgb(230, 230, 230);
+                        color: rgb(135, 135, 135);
+                        border-radius: 3px;
+        
+                        padding: 4px 8px 4px 8px;
+                        margin: 0 5px 0 5px;
+                    }
+                    .page {
+                        display: inline;
+                        padding: 4px 8px 4px 8px;
+                        margin-left: 10px;
+                    }
+                }
+    
+                .title-wrapper {
+                    padding: 10px 0 10px 0;
+    
+                    .contents-title {
+                        display: inline;
+                        font-size: 15pt;
+                        padding: 5px 0px 8px 5px;
+                        margin: 0 20px 0 20px;
+                    }
+                    button {
+                        display: inline;
+                        font-size: 8pt;
+                        margin: 2px;
+                    }
+                }
+    
+                .reason {
+                    font-size: 10pt;
+                    padding: 5px 0px 8px 5px;
+                }
+    
+                .done {
+                    height: 40px;
+                    font-size: 10pt;
+                    color: rgb(218, 5, 5);
+                    padding: 5px;
+                }
+                .buttons {
+                    height: 40px;
+                    font-size: 8pt;
+    
+                    button{
+                        margin-right: 5px;
+                    }
+                }
+                .date {
+                    font-size: 8pt;
+                    color: gray;
+                }
+            }
+        }
+    }
+}

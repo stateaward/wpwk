@@ -1,0 +1,77 @@
+@import 'common';
+
+.notification-container {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    background-color: rgb(255, 255, 255);
+    width: 220px;
+    height: 300px;
+    z-index: 10;
+    padding: 9px;
+
+    overflow: scroll;
+    // border-radius: 10px;
+    border: lightgray 1px solid;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .notification-wrapper {
+        width: 100%;
+        font-size: 12pt;
+
+        .for-stripe {
+            background-color: #F2F1F2;
+        }
+
+        .notification {
+            width: 100%;
+
+            .icon-message {
+                margin-bottom: 2px;
+                display: flow-root;
+                min-height: 45px;
+                .notification-type {
+                    width: 25%;
+                    float: left; 
+                    padding: 5px;     
+                    .icon1 {
+                        color: black;
+                        font-size: 30px;                        
+                    }
+                    .icon2 {
+                        color: red;
+                        font-size: 30px;
+                    }
+                    .icon3 {
+                        color: rgb(255, 153, 0);
+                        font-size: 30px;
+                    }
+                    .icon4 {
+                        color: red;
+                        font-size: 30px;
+                    }
+                    .icon5 {
+                        color: green;
+                        font-size: 30px;
+                    }
+                    .icon6 {
+                        color: blue;
+                        font-size: 30px;
+                    }
+                }
+
+                .notification-message {
+                    width: 95%;
+                    font-size: 12px;
+                }
+            }            
+        }
+
+        .notificationEmpty {
+            padding: 100px 40px 50px 50px;
+            font-display: center;
+        }
+    }
+}

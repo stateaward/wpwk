@@ -1,0 +1,148 @@
+.content-wrapper {
+  width: inherit;
+  min-width: inherit;
+  max-width: inherit;
+  height: inherit;
+  position: relative;
+  padding: 10px;
+  padding-bottom: 0px;
+}
+.content-wrapper .img-wrapper {
+  cursor: pointer;
+  width: 100%;
+  height: 70%;
+}
+.content-wrapper .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+  object-position: 50% 50%;
+}
+@media (min-width: 375px) and (max-width: 599px) {
+  .content-wrapper .img-wrapper img {
+    object-position: 50% 50%;
+  }
+}
+@media (min-width: 600px) and (max-width: 1263px) {
+  .content-wrapper .img-wrapper img {
+    object-position: 0px -50px;
+  }
+}
+.content-wrapper .img-wrapper::before {
+  content: "";
+  min-width: 310px;
+  width: 80%;
+  height: 100px;
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  z-index: -5;
+}
+.content-wrapper .img-wrapper:hover {
+  width: 105%;
+  height: 75%;
+  transition: 0.3s;
+  transform: translate(-10px, -10px);
+}
+.content-wrapper .img-wrapper:hover::before {
+  transform: translate(0px, -5x);
+  box-shadow: 0px 15px 25px 0px #0000008c;
+}
+.content-wrapper .img-wrapper .badge-cate {
+  position: relative;
+  top: -95%;
+  left: 3%;
+}
+.content-wrapper .img-wrapper .badge-cate span {
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 3px 6px;
+  margin-right: 6px;
+  font-weight: 600;
+  font-size: 10pt;
+  color: white;
+}
+.content-wrapper .img-wrapper .badge-cate span:nth-child(1) {
+  background-color: #fa9213;
+}
+.content-wrapper .img-wrapper .badge-cate span:nth-child(2) {
+  background-color: #ffae00;
+}
+.content-wrapper .img-wrapper .badge-cate span:nth-child(3) {
+  background-color: #f7bf44;
+}
+.content-wrapper .badge-time {
+  position: relative;
+  bottom: 60px;
+  left: 86.5%;
+  font-weight: 600;
+  font-size: 8pt;
+  color: white;
+  width: 40px;
+  background-color: rgba(0, 0, 0, 0.411);
+  border-radius: 5px;
+  padding: 2px 0px;
+  text-align: center;
+}
+.content-wrapper .desc-wrapper {
+  height: 30%;
+  font-size: 10pt;
+  padding: 2px 20px 0px 20px;
+}
+.content-wrapper .desc-wrapper h1 {
+  cursor: pointer;
+  color: #282828;
+  font-size: 20px;
+}
+.content-wrapper .desc-wrapper span {
+  cursor: pointer;
+  color: #EF960C;
+  font-weight: 600;
+  margin-right: 10px;
+}
+.content-wrapper .desc-wrapper h6 {
+  cursor: pointer;
+  color: #282828;
+  margin-top: 4px;
+  font-size: 12px;
+}
+.content-wrapper .desc-wrapper .btn-like {
+  background-color: #f4b740;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  position: relative;
+  left: 90%;
+  top: -50px;
+  text-align: center;
+  line-height: 40px;
+}
+.content-wrapper .desc-wrapper .btn-like i {
+  color: white;
+}
+.content-wrapper .desc-wrapper .btn-like:hover {
+  cursor: pointer;
+}
+.content-wrapper .desc-wrapper .btn-unlike {
+  background-color: #c3c3c3;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  position: relative;
+  left: 90%;
+  top: -50px;
+  text-align: center;
+  line-height: 40px;
+}
+.content-wrapper .desc-wrapper .btn-unlike i {
+  cursor: pointer;
+  color: white;
+}
+@media (min-width: 1024px) {
+  .content-wrapper .desc-wrapper .btn-unlike:hover {
+    background-color: #f4b740;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+}

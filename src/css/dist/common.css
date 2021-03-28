@@ -1,0 +1,12 @@
+* {
+  font-family: "Noto Sans KR", sans-serif;
+}
+* .nf {
+  font-family: "Poor Story", sans-serif !important;
+}
+* .nf-400 {
+  font-weight: 400;
+}
+* .nf-600 {
+  font-weight: 600;
+}

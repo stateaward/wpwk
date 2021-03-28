@@ -1,0 +1,154 @@
+@import "common";
+@import "./main/compoCmmu";
+
+//ArticleDetail
+// ㄴ CommentList
+//    ㄴ CommentListItem
+// ㄴ CommentForm
+
+//ArticleDetail
+.ad-container {
+  height: inherit;
+  padding: 10px;
+  padding-top: 40px;
+
+  overflow: hidden;
+
+  .article-wrapper {
+    margin-bottom: 10px;
+
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid rgb(228, 228, 228);
+
+    // height: 250px;
+    display: flex;
+    flex-direction: column;
+
+    .content-wrapper {
+      // border: 1px dashed blue;
+      border-bottom: 1px solid rgb(218, 218, 218);
+      padding-bottom: 5%;
+
+      .at-category-time {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .at-category {
+          display: inline;
+          background-color: rgb(230, 230, 230);
+          color: rgb(135, 135, 135);
+          border-radius: 3px;
+          font-size: 8pt;
+          padding: 4px 8px 4px 8px;
+        }
+        .at-timeinfo {
+          font-size: 9pt;
+          color: gray;
+        }
+      }
+
+      .nickname {
+        cursor: pointer;
+        padding-left: 10px;
+        padding-top: 10px;
+      }
+
+      .content {
+        padding-left: 10px;
+        padding-top: 5px;
+      }
+
+      .dots {
+        float: right;
+        margin-right: 1%;
+        cursor: pointer;
+      }
+
+      .dots:hover {
+        background-color: #e3e3e3;
+        border-radius: 50%;
+      }
+
+      .dropdown-menu {
+        float: right;
+        display: block;
+        width: 20%;
+        height: 50%;
+        box-shadow: 10px 10px 30px #d3d3d3;
+        border-radius: 15px;
+        padding: 10px;
+        margin: 1%;
+        //transform: translate(-10px, 7px) rotate(-45deg);
+      }
+
+      @media screen and (max-width: 768px) {
+        .dropdown-menu {
+          width: 50%;
+        }
+      }
+
+      .menu-detail {
+        padding: 3%;
+        cursor: pointer;
+        span {
+          padding-left: 10%;
+        }
+      }
+
+      .menu-detail:hover {
+        background-color: #e3e3e3;
+      }
+    }
+
+    .feature-wrapper {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 10px;
+
+      .likes-btn {
+        cursor: pointer;
+        color: rgb(218, 5, 5);
+      }
+
+      // 게시글 하단 우측의 댓글, 좋아요 한 사람 수 등
+      .info-btn {
+        display: flex;
+        align-items: center;
+
+        // 댓글, 좋아요 한 사람 수 아이콘은 인라인 스타일
+        // color: rgb(171, 171, 171);
+
+        font-size: 10pt;
+
+        .comment {
+          color: rgb(99, 99, 99);
+          margin-right: 10px;
+        }
+        .v-icon {
+          margin-right: 5px;
+          font-size: 15pt;
+        }
+        span {
+          color: rgb(255, 101, 101);
+          padding-bottom: 1px;
+        }
+      }
+    }
+  }
+
+  //CommentList
+  .comment-box {
+    // 댓글들 있는 쪽에만 스크롤 생기게 하기
+    // overflow-y:auto;
+    // overflow-x:hidden;
+    // width:100%;
+    // height:50%;
+
+    padding-bottom: 50px; //댓글 작성 폼으로 인해 가려진 부분 올려주기
+  }
+  //CommentForm
+}

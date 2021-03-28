@@ -1,0 +1,22 @@
+@import "vars";
+@import "mixins";
+
+// font-family: 'Noto Sans KR', sans-serif;
+
+* {
+    // border: 1px dashed green;
+    font-family: 'Noto Sans KR', sans-serif;
+    
+    
+    .nf{
+        // color: red;
+        font-family: 'Poor Story', sans-serif !important;
+
+        &-400{
+            font-weight: 400;
+        }
+        &-600{
+            font-weight: 600;
+        }
+    }
+}

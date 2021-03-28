@@ -1,0 +1,66 @@
+@import 'common';
+@import "./main/compoCmmu";
+
+//CommentList.vue
+.comment-wrapper {
+    // border: 1px dashed red;
+    margin: 2px;
+    align-items: center;
+    height: 60vh;
+
+    overflow-y: scroll;
+    background-color: white;
+
+    //CommentListItem.vue
+    .comment-item {
+        display: block;
+        width: 95%;
+        margin: 0px auto; //댓글들 가운데 정렬
+
+        background-color: white;
+        border-radius: 8px;
+        border: 1px solid rgb(225, 225, 225);
+
+        margin-bottom: 10px;
+
+        padding: 10px 20px;
+
+        .top-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .nickname {
+                cursor:pointer;
+                font-size: 10pt;
+            }
+
+            .created {
+                color: rgb(164, 164, 164);
+                font-size: 10pt;
+            }
+        }
+
+        // admin.scss의 p태그 속성에 영향받음
+        .content {
+            margin: 5px 0px;
+            justify-content: flex-start;
+            padding-top: 5px;
+            font-size: 10pt;
+        }
+
+        //삭제버튼
+        .btn-wrapper {
+            position: relative;
+            float: right;
+            top: -30px;
+            right: 0px;
+
+            i {
+                font-size: 16px;
+                color: rgb(235, 92, 92);
+            }
+        }
+    }
+
+}

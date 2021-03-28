@@ -1,0 +1,175 @@
+@charset "UTF-8";
+.lj-container {
+  background-color: #fffedd;
+  /* 전체화면 가리기 */
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  /* 창 덮기 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+}
+.lj-container .wrapper {
+  font-family: "Poor Srtoy", sans-serif !important;
+  min-width: 375px;
+  min-height: 500px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.lj-container .wrapper .title {
+  display: block;
+  height: 100px;
+  text-align: center;
+}
+.lj-container .wrapper .title img {
+  width: 250px;
+}
+.lj-container .wrapper .title .join-img {
+  width: 30px;
+}
+.lj-container .wrapper .title span {
+  display: block;
+  color: #a2d646;
+  font-size: 24px;
+  font-family: "Poor Story";
+  font-weight: 600;
+}
+.lj-container .wrapper .input-wrapper label {
+  display: block;
+  margin-bottom: 10px;
+}
+.lj-container .wrapper .input-wrapper .error {
+  background-color: white !important;
+  border: 1px solid #e32315 !important;
+}
+.lj-container .wrapper .input-wrapper input {
+  width: 250px;
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid #a2d646;
+  background-color: white;
+  padding-left: 20px;
+  /* border-bottom: 2px solid rgb(8, 89, 40); */
+}
+.lj-container .wrapper .input-wrapper input.join {
+  height: 40px;
+  font-size: 10pt;
+  border: 1px solid #f4b740;
+  display: block;
+}
+.lj-container .wrapper .input-wrapper input.join-retry {
+  height: 40px;
+  margin-top: 25px;
+  border: 1px solid #f4b740;
+}
+.lj-container .wrapper .input-wrapper label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+.lj-container .wrapper .input-wrapper .input-nick {
+  margin-top: 30px;
+  font-size: 12pt;
+}
+.lj-container .wrapper .feature-wrapper {
+  margin-top: 26px;
+  text-align: center;
+}
+.lj-container .wrapper .feature-wrapper .find_pw {
+  color: #989898;
+  font-size: 8pt;
+  text-decoration: underline;
+}
+.lj-container .wrapper .feature-wrapper .find_pw:hover {
+  color: #010101;
+  font-size: 10pt;
+}
+.lj-container .wrapper .feature-wrapper #submit {
+  margin-top: 1.2em;
+  margin-bottom: 10px;
+  color: #f4b740;
+  font-size: 10pt;
+  border-radius: 20px;
+  background-color: white !important;
+  border: 2px #f4b740 solid !important;
+  padding: 20px 70px;
+  font-weight: 600;
+}
+.lj-container .wrapper .feature-wrapper #submit.join {
+  margin: 10px 0px 0px 0px;
+  color: #89BA17;
+  background-color: white !important;
+  border: 2px #89BA17 solid !important;
+}
+.lj-container .wrapper .btn-back {
+  font-size: 9pt;
+  padding-top: 0px;
+}
+.lj-container .wrapper .btn-back a {
+  color: gray;
+}
+.lj-container .wrapper .social-wrapper {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+.lj-container .wrapper .social-wrapper .btn-social-group {
+  display: flex;
+  justify-content: center;
+}
+.lj-container .wrapper .social-wrapper .btn-social-group .btn-social {
+  border-radius: 20px;
+  border: 1px solid #e1e1e1;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+}
+.lj-container .wrapper .social-wrapper .btn-social-group .btn-social.kakao {
+  background-color: #f8eb00;
+}
+.lj-container .wrapper .social-wrapper .btn-social-group .btn-social:nth-child(1) {
+  margin-right: 20px;
+}
+
+.input-wrapper .input-wrapper input:nth-child(2n+1) {
+  background-color: #f4b740;
+  /* border-bottom: 2px solid rgb(8, 89, 40); */
+}
+
+.input-wrapper input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: #b8b8b8;
+  font-style: italic;
+  font-size: 10pt;
+}
+
+.input-password,
+.input-email {
+  margin-top: 20px;
+}
+
+.error-text {
+  position: absolute;
+  margin-top: 4px;
+  color: #ff5151;
+  font-size: 13px;
+}
+.error-text i {
+  color: #ff5151;
+  font-size: 17px;
+}

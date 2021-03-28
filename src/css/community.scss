@@ -1,0 +1,100 @@
+@import "common";
+@import "./main/compoCmmu";
+
+//Community
+// ㄴ ArticleList
+//    ㄴ Article
+
+.cm-container {
+  height: 100%;
+  // background-color: rgb(205, 54, 104) !important;
+  overflow: hidden;
+  padding: 10px;
+
+  //Article.vue
+  .article-wrapper {
+    margin-bottom: 10px;
+
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid rgb(228, 228, 228);
+
+    // height: 250px;
+    display: flex;
+    flex-direction: column;
+
+    .content-wrapper {
+      cursor: pointer;
+      border-bottom: 1px solid rgb(218, 218, 218);      
+      padding-bottom: 5%;
+
+      .category-time {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .cm-category {
+          display: inline;
+          background-color: rgb(230, 230, 230);
+          color: rgb(135, 135, 135);
+          border-radius: 3px;
+          font-size: 8pt;
+
+          padding: 4px 8px 4px 8px;
+        }
+        .cm-timeinfo {
+          font-size: 9pt;
+          color: gray;
+        }
+      }
+
+      .nickname {
+        padding-left: 10px;
+        padding-top: 10px;
+      }
+
+      .content {
+        padding-left: 10px;
+        padding-top: 5px;
+      }
+    }
+
+    .feature-wrapper {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 10px;
+
+      .likes-btn {
+        cursor: pointer;
+        color: rgb(218, 5, 5);
+      }
+
+      // 게시글 하단 우측의 댓글, 좋아요 한 사람 수 등
+      .info-btn {
+        display: flex;
+        align-items: center;
+
+        // 댓글, 좋아요 한 사람 수 아이콘은 인라인 스타일
+        // color: rgb(171, 171, 171);
+
+        font-size: 10pt;
+
+        .comment {
+          cursor: pointer;
+          color: rgb(99, 99, 99);
+          margin-right: 10px;
+        }
+        .v-icon {
+          margin-right: 5px;
+          font-size: 15pt;
+        }
+        span {
+          color: rgb(255, 101, 101);
+          padding-bottom: 1px;
+        }
+      }
+    }
+  }
+}
